@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    
+    <!-- Nhúng các file CSS. Chú ý thứ tự: variables phải nằm trên cùng -->
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/hero.css">
+</head>
+<body>
+    
+    <!-- Header: Thanh điều hướng -->
+    <header>
+        <div class="logo">Trung</div>
+        
+        <!-- Thủ thuật dùng Checkbox để làm menu ẩn/hiện trên điện thoại (CSS-only) -->
+        <input type="checkbox" id="menu-toggle" class="menu-toggle">
+        <label for="menu-toggle" class="menu-icon">&#9776;</label>
+        
+        <nav>
+            <a href="#about">About</a>
+            <a href="#skills">Skills</a>
+            <a href="#portfolio">Portfolio</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+    <!-- Main: Phần nội dung chính của trang web -->
+    <main>
+        <!-- Hero Section: Màn hình chào mừng -->
+        <section class="hero">
+            <h1>Hi, I'm Trung</h1>
+            <p>Full-Stack Developer | UI Designer | Problem Solver</p>
+            <a href="#portfolio" class="cta-button">View My Work</a>
+        </section>
+        
+        <!-- Các section sau (About, Skills, Portfolio, Contact) sẽ được viết tiếp vào đây ở Bài 1.2, 1.3, 1.4 -->
+    </main>
+
+</body>
+</html>
