@@ -54,3 +54,10 @@ textarea { resize: vertical; min-height: 120px; }
 .form-group textarea:valid {
     border-color: #10b981; /* Đổi viền xanh lá khi nhập đúng */
 }
+/* Thêm vào cuối file contact.css */
+@media (max-width: 768px) {
+    .contact-wrapper {
+        grid-template-columns: 1fr;
+        padding: 1.5rem;
+    }
+}
