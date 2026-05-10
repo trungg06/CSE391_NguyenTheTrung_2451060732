@@ -1,0 +1,50 @@
+.skills-section {
+    padding: 5rem 1.5rem;
+    background-color: var(--color-light); /* Màu nền xám nhạt cho khác với phần About */
+}
+
+.skills-section h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    color: var(--color-dark);
+}
+
+/* Chia 2 cột cho các kỹ năng trên màn hình máy tính */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+}
+
+.skill-item {
+    margin-bottom: 1rem;
+}
+
+.skill-name {
+    display: block;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+}
+
+/* Cái máng màu xám hứng ở dưới */
+.skill-bar {
+    background: #e2e8f0;
+    border-radius: 10px;
+    height: 12px;
+    width: 100%;
+    overflow: hidden;
+}
+
+/* Phần lõi màu xanh bên trong - Ban đầu để chiều rộng (width) là 0 */
+.skill-progress {
+    background: linear-gradient(90deg, var(--color-primary), var(--color-secondary));
+    height: 100%;
+    width: 0; 
+    transition: width 1s ease-out; /* Chạy mượt trong 1 giây */
+}
+
+/* Khi được gắn class 'animate' (bằng JS), nó sẽ phóng to bằng với biến --progress ở HTML */
+.skill-progress.animate {
+    width: var(--progress);
+}
