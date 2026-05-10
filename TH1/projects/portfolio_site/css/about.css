@@ -1,0 +1,53 @@
+/* Tạo khoảng trống trên dưới cho khu vực này */
+.about-section {
+    padding: 5rem 1.5rem;
+    background-color: white;
+}
+
+/* Căn giữa nội dung, không cho nó bè ra quá to ở màn hình lớn */
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+/* CHIA CỘT: Dùng Grid để chia màn hình làm 2 phần (ảnh 1 phần, chữ 1.5 phần) */
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 3rem; /* Khoảng cách giữa ảnh và chữ */
+    align-items: center;
+}
+
+/* Làm tròn ảnh đại diện */
+.about-image img {
+    width: 100%;
+    max-width: 300px;
+    border-radius: 50%; 
+    display: block;
+    margin: 0 auto;
+}
+
+/* Làm đẹp chữ */
+.about-content h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    color: var(--color-dark);
+}
+
+.about-content .lead {
+    font-size: 1.25rem;
+    font-weight: 300;
+    margin-bottom: 1rem;
+    color: var(--color-primary);
+}
+
+/* ÉP XUỐNG 1 CỘT KHI XEM TRÊN ĐIỆN THOẠI (Dưới 768px) */
+@media (max-width: 768px) {
+    .about-grid { 
+        grid-template-columns: 1fr; 
+        text-align: center;
+    }
+    .about-image img {
+        max-width: 200px; /* Thu nhỏ ảnh lại trên điện thoại */
+    }
+}
