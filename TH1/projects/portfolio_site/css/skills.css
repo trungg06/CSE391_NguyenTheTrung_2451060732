@@ -48,3 +48,9 @@
 .skill-progress.animate {
     width: var(--progress);
 }
+/* Responsive cho Skills Section */
+@media (max-width: 768px) {
+    .skills-grid { 
+        grid-template-columns: 1fr; /* Ép về 1 cột trên mobile */
+    }
+}
