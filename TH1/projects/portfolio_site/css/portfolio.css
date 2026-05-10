@@ -95,3 +95,44 @@
 .portfolio-item:hover .portfolio-overlay {
     opacity: 1;
 }
+/* ================= CSS LIGHTBOX ================= */
+.lightbox {
+    position: fixed;
+    inset: 0; /* Trải rộng khắp màn hình */
+    background: rgba(0,0,0,0.95);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    visibility: hidden; /* Ban đầu hoàn toàn vô hình */
+    transition: all 0.3s ease;
+    z-index: 2000; /* Nằm đè lên trên tất cả mọi thứ */
+}
+
+/* HIỆN LIGHTBOX: Chỉ khi cái ID của lightbox này trùng với cái link đang click (#lightbox-1) */
+.lightbox:target {
+    opacity: 1;
+    visibility: visible;
+}
+
+.lightbox img {
+    max-width: 90%;
+    max-height: 80vh;
+    border-radius: 8px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+}
+
+/* Nút X để đóng (Thực chất là click để trỏ link về lại #portfolio) */
+.lightbox-close {
+    position: absolute;
+    top: 30px;
+    right: 40px;
+    font-size: 3rem;
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.lightbox-close:hover {
+    color: var(--color-primary);
+}
