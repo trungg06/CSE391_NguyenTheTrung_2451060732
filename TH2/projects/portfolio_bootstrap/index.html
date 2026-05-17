@@ -20,17 +20,39 @@
   <body>
     <!-- Header: Thanh điều hướng -->
     <header>
-      <div class="logo">Trung</div>
-
-      <!-- Thủ thuật dùng Checkbox để làm menu ẩn/hiện trên điện thoại (CSS-only) -->
-      <input type="checkbox" id="menu-toggle" class="menu-toggle" />
-      <label for="menu-toggle" class="menu-icon">&#9776;</label>
-
-      <nav>
-        <a href="#about">About</a>
-        <a href="#skills">Skills</a>
-        <a href="#portfolio">Portfolio</a>
-        <a href="#contact">Contact</a>
+      <nav
+        class="navbar navbar-expand-lg navbar-light bg-white sticky-top shadow-sm"
+      >
+        <div class="container">
+          <a class="navbar-brand fw-bold text-primary" href="#">Trung</a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+              <li class="nav-item">
+                <a class="nav-link" href="#about">About</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#skills">Skills</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#portfolio">Portfolio</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#contact">Contact</a>
+              </li>
+            </ul>
+          </div>
+        </div>
       </nav>
     </header>
 
@@ -80,206 +102,103 @@
           </div>
         </div>
       </section>
-      <section id="portfolio" class="portfolio-section">
-        <div class="container">
-          <h2>My Portfolio</h2>
-
-          <div class="portfolio-filters">
-            <button class="filter-btn active">All</button>
-            <button class="filter-btn">Web</button>
-            <button class="filter-btn">Mobile</button>
-            <button class="filter-btn">Design</button>
-          </div>
-
-          <div class="portfolio-grid">
-            <div class="portfolio-item" data-category="web">
-              <a href="#lightbox-1" class="lightbox-link">
-                <img
-                  src="https://via.placeholder.com/400x300?text=Web+Project+1"
-                  alt="E-Commerce Website"
-                />
-                <div class="portfolio-overlay">
-                  <h3>E-Commerce Website</h3>
-                  <p>React + Node.js</p>
+     <section id="portfolio" class="py-5">
+    <div class="container">
+        <h2 class="text-center mb-5">My Portfolio</h2>
+        <div class="row g-4">
+            
+            <div class="col-12 col-md-6 col-lg-4">
+                <div class="card h-100 shadow-sm border-0">
+                    <img src="https://via.placeholder.com/400x300" class="card-img-top" alt="Project 1">
+                    <div class="card-body">
+                        <h5 class="card-title">E-Commerce Website</h5>
+                        <p class="card-text text-muted">React + Node.js</p>
+                    </div>
                 </div>
-              </a>
             </div>
-
-            <div class="portfolio-item" data-category="web">
-              <a href="#lightbox-2" class="lightbox-link">
-                <img
-                  src="https://via.placeholder.com/400x300?text=Web+Project+2"
-                  alt="Blog Platform"
-                />
-                <div class="portfolio-overlay">
-                  <h3>Blog Platform</h3>
-                  <p>Vue.js + Firebase</p>
+            
+            <div class="col-12 col-md-6 col-lg-4">
+                <div class="card h-100 shadow-sm border-0">
+                    <img src="https://via.placeholder.com/400x300" class="card-img-top" alt="Project 2">
+                    <div class="card-body">
+                        <h5 class="card-title">Mobile App</h5>
+                        <p class="card-text text-muted">Flutter</p>
+                    </div>
                 </div>
-              </a>
             </div>
 
-            <div class="portfolio-item" data-category="web">
-              <a href="#lightbox-3" class="lightbox-link">
-                <img
-                  src="https://via.placeholder.com/400x300?text=Web+Project+3"
-                  alt="Dashboard Admin"
-                />
-                <div class="portfolio-overlay">
-                  <h3>Dashboard Admin</h3>
-                  <p>Angular + Python</p>
+            <div class="col-12 col-md-6 col-lg-4">
+                <div class="card h-100 shadow-sm border-0">
+                    <img src="https://via.placeholder.com/400x300" class="card-img-top" alt="Project 3">
+                    <div class="card-body">
+                        <h5 class="card-title">Admin Dashboard</h5>
+                        <p class="card-text text-muted">Vue.js</p>
+                    </div>
                 </div>
-              </a>
             </div>
 
-            <div class="portfolio-item" data-category="mobile">
-              <a href="#lightbox-4" class="lightbox-link">
-                <img
-                  src="https://via.placeholder.com/400x300?text=Mobile+App+1"
-                  alt="Fitness Tracker"
-                />
-                <div class="portfolio-overlay">
-                  <h3>Fitness Tracker</h3>
-                  <p>Flutter</p>
+        </div>
+    </div>
+</section>
+     <section id="about" class="py-5">
+    <div class="container">
+        <h2 class="text-center mb-5">About Me</h2>
+        <div class="row align-items-center g-5">
+            <div class="col-lg-5 text-center">
+                <img src="https://via.placeholder.com/400x400" class="rounded-circle img-fluid shadow" alt="Profile" style="max-width: 300px;">
+            </div>
+            <div class="col-lg-7">
+                <p class="lead">I'm a passionate developer with 3 years of experience building web applications.</p>
+                <p>Specialized in Frontend development with React and Vue. Also experienced in Backend with Node.js and Python.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="skills" class="py-5 bg-light">
+    <div class="container">
+        <h2 class="text-center mb-5">My Skills</h2>
+        <div class="row g-4">
+            
+            <div class="col-md-6">
+                <div class="mb-4">
+                    <div class="d-flex justify-content-between mb-1">
+                        <span class="fw-semibold">HTML5 / CSS3</span>
+                        <span class="text-primary fw-semibold">95%</span>
+                    </div>
+                    <div class="progress" style="height: 12px;">
+                        <div class="progress-bar bg-primary" style="width: 95%"></div>
+                    </div>
                 </div>
-              </a>
             </div>
 
-            <div class="portfolio-item" data-category="mobile">
-              <a href="#lightbox-5" class="lightbox-link">
-                <img
-                  src="https://via.placeholder.com/400x300?text=Mobile+App+2"
-                  alt="Food Delivery"
-                />
-                <div class="portfolio-overlay">
-                  <h3>Food Delivery</h3>
-                  <p>React Native</p>
+            <div class="col-md-6">
+                <div class="mb-4">
+                    <div class="d-flex justify-content-between mb-1">
+                        <span class="fw-semibold">JavaScript</span>
+                        <span class="text-primary fw-semibold">85%</span>
+                    </div>
+                    <div class="progress" style="height: 12px;">
+                        <div class="progress-bar bg-primary" style="width: 85%"></div>
+                    </div>
                 </div>
-              </a>
             </div>
 
-            <div class="portfolio-item" data-category="design">
-              <a href="#lightbox-6" class="lightbox-link">
-                <img
-                  src="https://via.placeholder.com/400x300?text=Design+Project"
-                  alt="Brand Identity"
-                />
-                <div class="portfolio-overlay">
-                  <h3>Brand Identity</h3>
-                  <p>Figma + Illustrator</p>
-                </div>
-              </a>
-            </div>
-          </div>
         </div>
-
-        <div id="lightbox-1" class="lightbox">
-          <a href="#portfolio" class="lightbox-close">&times;</a>
-          <img
-            src="https://via.placeholder.com/800x600?text=Web+Project+1+Large"
-            alt="Project 1 Large"
-          />
-        </div>
-
-        <div id="lightbox-2" class="lightbox">
-          <a href="#portfolio" class="lightbox-close">&times;</a>
-          <img
-            src="https://via.placeholder.com/800x600?text=Web+Project+2+Large"
-            alt="Project 2 Large"
-          />
-        </div>
-
-        <div id="lightbox-3" class="lightbox">
-          <a href="#portfolio" class="lightbox-close">&times;</a>
-          <img
-            src="https://via.placeholder.com/800x600?text=Web+Project+3+Large"
-            alt="Project 3 Large"
-          />
-        </div>
-
-        <div id="lightbox-4" class="lightbox">
-          <a href="#portfolio" class="lightbox-close">&times;</a>
-          <img
-            src="https://via.placeholder.com/800x600?text=Mobile+App+1+Large"
-            alt="Project 4 Large"
-          />
-        </div>
-
-        <div id="lightbox-5" class="lightbox">
-          <a href="#portfolio" class="lightbox-close">&times;</a>
-          <img
-            src="https://via.placeholder.com/800x600?text=Mobile+App+2+Large"
-            alt="Project 5 Large"
-          />
-        </div>
-
-        <div id="lightbox-6" class="lightbox">
-          <a href="#portfolio" class="lightbox-close">&times;</a>
-          <img
-            src="https://via.placeholder.com/800x600?text=Design+Project+Large"
-            alt="Project 6 Large"
-          />
-        </div>
-      </section>
-      <section id="skills" class="skills-section">
-        <div class="container">
-          <h2>My Skills</h2>
-
-          <div class="skills-grid">
-            <div class="skill-item">
-              <span class="skill-name">HTML5 - 95%</span>
-              <div class="skill-bar">
-                <div class="skill-progress" style="--progress: 95%"></div>
-              </div>
-            </div>
-
-            <div class="skill-item">
-              <span class="skill-name">CSS3 - 90%</span>
-              <div class="skill-bar">
-                <div class="skill-progress" style="--progress: 90%"></div>
-              </div>
-            </div>
-
-            <div class="skill-item">
-              <span class="skill-name">JavaScript - 85%</span>
-              <div class="skill-bar">
-                <div class="skill-progress" style="--progress: 85%"></div>
-              </div>
-            </div>
-
-            <div class="skill-item">
-              <span class="skill-name">React - 80%</span>
-              <div class="skill-bar">
-                <div class="skill-progress" style="--progress: 80%"></div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      <section class="hero">
-        <section id="about" class="about-section">
-          <div class="container">
-            <div class="about-grid">
-              <div class="about-image">
-                <img
-                  src="https://via.placeholder.com/400x400"
-                  alt="Profile Photo"
-                />
-              </div>
-
-              <div class="about-content">
-                <h2>About Me</h2>
-                <p class="lead">
-                  I'm a passionate developer with 3 years of experience building
-                  web applications.
-                </p>
-                <p>
-                  Specialized in Frontend development with React and Vue. Also
-                  experienced in Backend with Node.js and Python.
-                </p>
-              </div>
-            </div>
-          </div>
-        </section>
+    </div>
+</section>
+      <section class="min-vh-100 d-flex align-items-center justify-content-center text-center text-white"
+         style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
+    <div class="container">
+        <h1 class="display-2 fw-bold mb-3">
+            Hi, I'm <span class="text-warning">Trung</span>
+        </h1>
+        <p class="lead mb-4 opacity-75">Full-Stack Developer | UI Designer | Problem Solver</p>
+        <a href="#portfolio" class="btn btn-light btn-lg px-5 py-3 fw-semibold">
+            View My Work →
+        </a>
+    </div>
+</section>
         <h1>Hi, I'm Trung</h1>
         <p>Full-Stack Developer | UI Designer | Problem Solver</p>
         <a href="#portfolio" class="cta-button">View My Work</a>
