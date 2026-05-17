@@ -1,0 +1,22 @@
+/* css/custom-theme.css */
+
+/* :root là nơi chứa các biến mặc định của toàn trang web */
+:root {
+  /* Đổi màu Primary sang Teal (Xanh ngọc) */
+  --bs-primary: #20c997;
+  /* Mã màu RGB của Teal (cần thiết cho các hiệu ứng bóng mờ của Bootstrap) */
+  --bs-primary-rgb: 32, 201, 151;
+
+  /* Sửa luôn màu của nút bấm khi dùng class btn-primary */
+  --bs-btn-bg: var(--bs-primary);
+  --bs-btn-border-color: var(--bs-primary);
+  --bs-btn-hover-bg: #1aa179;
+  --bs-btn-hover-border-color: #178d6a;
+}
+
+/* Đổi màu chữ của một số thành phần dùng nền Primary thành màu trắng cho dễ đọc */
+.badge.bg-primary,
+.btn-primary,
+.progress-bar.bg-primary {
+  color: white !important;
+}
