@@ -20,3 +20,27 @@
 .progress-bar.bg-primary {
   color: white !important;
 }
+/* ========================================= */
+/* TÙY CHỈNH ĐỘ BO GÓC (BORDER RADIUS)       */
+/* ========================================= */
+:root {
+  /* Làm các góc bo tròn mềm mại hơn nhiều so với mặc định */
+  --bs-border-radius: 1rem; /* 16px */
+  --bs-border-radius-lg: 1.5rem; /* 24px */
+  --bs-border-radius-sm: 0.5rem; /* 8px */
+}
+
+/* ========================================= */
+/* TẠO THÊM CLASS KHOẢNG CÁCH RIÊNG (SPACING)*/
+/* ========================================= */
+/* Bootstrap mặc định chỉ có pt-5, pb-5 (khoảng 3rem). 
+   Ta tạo thêm mức 6 và 7 cho các khu vực cần thật rộng rãi */
+.py-6 {
+  padding-top: 6rem !important;
+  padding-bottom: 6rem !important;
+}
+
+.py-7 {
+  padding-top: 8rem !important;
+  padding-bottom: 8rem !important;
+}
