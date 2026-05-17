@@ -12,8 +12,8 @@
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="css/comments.css">
-    <link rel="stylesheet" href="css/custom-theme.css">
+    <link rel="stylesheet" href="css/comments.css" />
+    <link rel="stylesheet" href="css/custom-theme.css" />
   </head>
   <body class="bg-light">
     <nav
@@ -32,7 +32,9 @@
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav ms-auto">
             <li class="nav-item">
-              <a class="nav-link" href="index.html">Home</a>
+              <a class="nav-link fw-bold text-primary" href="index.html"
+                >Home</a
+              >
             </li>
             <li class="nav-item">
               <a class="nav-link active fw-bold text-primary" href="blog.html"
@@ -84,107 +86,184 @@
               <a href="#" class="btn btn-outline-primary">Read More</a>
             </div>
           </div>
+
+          <div class="card shadow-sm border-0 mb-5">
+            <div class="card-body p-4">
+              <h4 class="fw-bold mb-4">Leave a Comment</h4>
+              <form class="mb-4">
+                <div class="row g-3 mb-3">
+                  <div class="col-md-6">
+                    <input
+                      type="text"
+                      class="form-control"
+                      placeholder="Your Name"
+                      required
+                    />
+                  </div>
+                  <div class="col-md-6">
+                    <input
+                      type="email"
+                      class="form-control"
+                      placeholder="Your Email"
+                      required
+                    />
+                  </div>
+                </div>
+                <div class="mb-3">
+                  <textarea
+                    class="form-control"
+                    rows="4"
+                    placeholder="Write your comment here..."
+                    required
+                  ></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">
+                  Post Comment
+                </button>
+              </form>
+            </div>
+          </div>
+
+          <hr class="my-5" />
+          <h5 class="fw-bold mb-4">3 Comments</h5>
+
+          <div class="d-flex mb-4">
+            <img
+              src="https://ui-avatars.com/api/?name=Alex&background=random"
+              class="rounded-circle me-3 comment-avatar"
+              alt="Avatar"
+            />
+            <div>
+              <h6 class="fw-bold mb-1">
+                Alex Johnson
+                <span class="text-muted fw-normal small ms-2">2 hours ago</span>
+              </h6>
+              <p class="mb-2">
+                This is a fantastic guide! Bootstrap 5 makes grid layouts so
+                much easier compared to pure CSS.
+              </p>
+              <a
+                href="#"
+                class="text-primary text-decoration-none small fw-semibold"
+                >Reply</a
+              >
+            </div>
+          </div>
+
+          <div class="d-flex mb-4 comment-reply">
+            <img
+              src="https://ui-avatars.com/api/?name=Trung&background=0D8ABC&color=fff"
+              class="rounded-circle me-3 comment-avatar"
+              alt="Avatar"
+            />
+            <div>
+              <h6 class="fw-bold mb-1">
+                Trung <span class="badge bg-primary ms-2">Author</span>
+                <span class="text-muted fw-normal small ms-2">1 hour ago</span>
+              </h6>
+              <p class="mb-2">Thank you Alex! Glad you found it helpful.</p>
+              <a
+                href="#"
+                class="text-primary text-decoration-none small fw-semibold"
+                >Reply</a
+              >
+            </div>
+          </div>
+
+          <div class="d-flex mb-4">
+            <img
+              src="https://ui-avatars.com/api/?name=Sarah&background=random"
+              class="rounded-circle me-3 comment-avatar"
+              alt="Avatar"
+            />
+            <div>
+              <h6 class="fw-bold mb-1">
+                Sarah
+                <span class="text-muted fw-normal small ms-2">5 hours ago</span>
+              </h6>
+              <p class="mb-2">
+                Could you do a tutorial on customizing the Bootstrap variables
+                with Sass next?
+              </p>
+              <a
+                href="#"
+                class="text-primary text-decoration-none small fw-semibold"
+                >Reply</a
+              >
+            </div>
+          </div>
         </div>
-        <div class="card shadow-sm border-0 mb-5">
-                    <div class="card-body p-4">
-                        <h4 class="fw-bold mb-4">Leave a Comment</h4>
-                        
-                        <form class="mb-4">
-                            <div class="row g-3 mb-3">
-                                <div class="col-md-6">
-                                    <input type="text" class="form-control" placeholder="Your Name" required>
-                                </div>
-                                <div class="col-md-6">
-                                    <input type="email" class="form-control" placeholder="Your Email" required>
-                                </div>
-                            </div>
-                            <div class="mb-3">
-                                <textarea class="form-control" rows="4" placeholder="Write your comment here..." required></textarea>
-                            </div>
-                            <button type="submit" class="btn btn-primary">Post Comment</button>
-                        </form>
-
-                    </div>
-                </div>
-                <hr class="my-5">
-                        
-                        <h5 class="fw-bold mb-4">3 Comments</h5>
-                        
-                        <div class="d-flex mb-4">
-                            <img src="https://ui-avatars.com/api/?name=Alex&background=random" class="rounded-circle me-3 comment-avatar" alt="Avatar">
-                            <div>
-                                <h6 class="fw-bold mb-1">Alex Johnson <span class="text-muted fw-normal small ms-2">2 hours ago</span></h6>
-                                <p class="mb-2">This is a fantastic guide! Bootstrap 5 makes grid layouts so much easier compared to pure CSS.</p>
-                                <a href="#" class="text-primary text-decoration-none small fw-semibold">Reply</a>
-                            </div>
-                        </div>
-
-                        <div class="d-flex mb-4 comment-reply">
-                            <img src="https://ui-avatars.com/api/?name=Trung&background=0D8ABC&color=fff" class="rounded-circle me-3 comment-avatar" alt="Avatar">
-                            <div>
-                                <h6 class="fw-bold mb-1">Trung <span class="badge bg-primary ms-2">Author</span> <span class="text-muted fw-normal small ms-2">1 hour ago</span></h6>
-                                <p class="mb-2">Thank you Alex! Glad you found it helpful.</p>
-                                <a href="#" class="text-primary text-decoration-none small fw-semibold">Reply</a>
-                            </div>
-                        </div>
-
-                        <div class="d-flex mb-4">
-                            <img src="https://ui-avatars.com/api/?name=Sarah&background=random" class="rounded-circle me-3 comment-avatar" alt="Avatar">
-                            <div>
-                                <h6 class="fw-bold mb-1">Sarah <span class="text-muted fw-normal small ms-2">5 hours ago</span></h6>
-                                <p class="mb-2">Could you do a tutorial on customizing the Bootstrap variables with Sass next?</p>
-                                <a href="#" class="text-primary text-decoration-none small fw-semibold">Reply</a>
-                            </div>
-                        </div>
-
         <div class="col-lg-4" id="sidebar-container">
-                
-                <div class="position-sticky" style="top: 80px;">
-                    
-                    <div class="card shadow-sm border-0 mb-4">
-                        <div class="card-body p-4">
-                            <h5 class="card-title fw-bold mb-3">Search</h5>
-                            <div class="input-group">
-                                <input type="text" class="form-control" placeholder="Search articles...">
-                                <button class="btn btn-primary" type="button"><i class="bi bi-search"></i></button>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="card shadow-sm border-0 mb-4">
-                        <div class="card-body p-4">
-                            <h5 class="card-title fw-bold mb-3">Categories</h5>
-                            <div class="list-group list-group-flush">
-                                <a href="#" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center px-0">
-                                    Web Development <span class="badge bg-primary rounded-pill">14</span>
-                                </a>
-                                <a href="#" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center px-0">
-                                    UI/UX Design <span class="badge bg-primary rounded-pill">8</span>
-                                </a>
-                                <a href="#" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center px-0">
-                                    Career Advice <span class="badge bg-primary rounded-pill">5</span>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="card shadow-sm border-0">
-                        <div class="card-body p-4">
-                            <h5 class="card-title fw-bold mb-3">Tags</h5>
-                            <div class="d-flex flex-wrap gap-2">
-                                <span class="badge bg-light text-dark border p-2">HTML/CSS</span>
-                                <span class="badge bg-light text-dark border p-2">JavaScript</span>
-                                <span class="badge bg-light text-dark border p-2">Bootstrap 5</span>
-                                <span class="badge bg-light text-dark border p-2">React</span>
-                                <span class="badge bg-light text-dark border p-2">Tutorial</span>
-                            </div>
-                        </div>
-                    </div>
-
+          <div class="position-sticky" style="top: 80px">
+            <div class="card shadow-sm border-0 mb-4">
+              <div class="card-body p-4">
+                <h5 class="card-title fw-bold mb-3">Search</h5>
+                <div class="input-group">
+                  <input
+                    type="text"
+                    class="form-control"
+                    placeholder="Search articles..."
+                  />
+                  <button class="btn btn-primary" type="button">
+                    <i class="bi bi-search"></i>
+                  </button>
                 </div>
+              </div>
             </div>
 
+            <div class="card shadow-sm border-0 mb-4">
+              <div class="card-body p-4">
+                <h5 class="card-title fw-bold mb-3">Categories</h5>
+                <div class="list-group list-group-flush">
+                  <a
+                    href="#"
+                    class="list-group-item list-group-item-action d-flex justify-content-between align-items-center px-0"
+                  >
+                    Web Development
+                    <span class="badge bg-primary rounded-pill">14</span>
+                  </a>
+                  <a
+                    href="#"
+                    class="list-group-item list-group-item-action d-flex justify-content-between align-items-center px-0"
+                  >
+                    UI/UX Design
+                    <span class="badge bg-primary rounded-pill">8</span>
+                  </a>
+                  <a
+                    href="#"
+                    class="list-group-item list-group-item-action d-flex justify-content-between align-items-center px-0"
+                  >
+                    Career Advice
+                    <span class="badge bg-primary rounded-pill">5</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="card shadow-sm border-0">
+              <div class="card-body p-4">
+                <h5 class="card-title fw-bold mb-3">Tags</h5>
+                <div class="d-flex flex-wrap gap-2">
+                  <span class="badge bg-light text-dark border p-2"
+                    >HTML/CSS</span
+                  >
+                  <span class="badge bg-light text-dark border p-2"
+                    >JavaScript</span
+                  >
+                  <span class="badge bg-light text-dark border p-2"
+                    >Bootstrap 5</span
+                  >
+                  <span class="badge bg-light text-dark border p-2">React</span>
+                  <span class="badge bg-light text-dark border p-2"
+                    >Tutorial</span
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
   </body>
 </html>
-<!-- hihi -->
