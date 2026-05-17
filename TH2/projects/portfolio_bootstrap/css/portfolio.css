@@ -1,0 +1,138 @@
+/* css/portfolio.css */
+.portfolio-section {
+    padding: 5rem 1.5rem;
+    background-color: white;
+}
+
+.portfolio-section h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    color: var(--color-dark);
+}
+
+/* Các nút lọc */
+.portfolio-filters {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 3rem;
+    flex-wrap: wrap; /* Cho phép rớt dòng trên màn hình nhỏ */
+}
+
+.filter-btn {
+    background: transparent;
+    border: 2px solid var(--color-primary);
+    padding: 0.5rem 1.5rem;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 500;
+}
+
+.filter-btn:hover,
+.filter-btn.active {
+    background: var(--color-primary);
+    color: white;
+}
+
+/* CHIA CỘT GRID: Tự động dàn từ 1 đến 3 cột tùy màn hình */
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.5rem;
+}
+
+/* Cài đặt cho từng ảnh dự án */
+.portfolio-item {
+    position: relative;
+    overflow: hidden; /* Cắt phần ảnh bị phóng to tràn ra ngoài viền */
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.lightbox-link {
+    display: block; /* Để thẻ a phủ kín div chứa nó */
+}
+
+.portfolio-item img {
+    width: 100%;
+    aspect-ratio: 4/3;
+    object-fit: cover;
+    transition: transform 0.4s ease; /* Thời gian phóng to ảnh */
+}
+
+/* Hiệu ứng HOVER (Di chuột vào thì phóng to ảnh) */
+.portfolio-item:hover img {
+    transform: scale(1.1);
+}
+
+/* Tấm màn đen mờ chứa chữ (Overlay) */
+.portfolio-overlay {
+    position: absolute;
+    inset: 0; /* Phủ kín 4 góc (top, left, right, bottom = 0) */
+    background: linear-gradient(
+        to top,
+        rgba(30, 41, 59, 0.95) 0%,
+        rgba(30, 41, 59, 0.6) 50%,
+        transparent 100%
+    );
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 1.5rem;
+    opacity: 0; /* Ban đầu ẩn đi */
+    transition: opacity 0.3s ease;
+    color: white;
+}
+
+.portfolio-overlay h3 {
+    margin-bottom: 0.5rem;
+    font-size: 1.25rem;
+}
+
+/* Di chuột vào thì tấm màn đen hiện ra */
+.portfolio-item:hover .portfolio-overlay {
+    opacity: 1;
+}
+/* ================= CSS LIGHTBOX ================= */
+.lightbox {
+    position: fixed;
+    inset: 0; /* Trải rộng khắp màn hình */
+    background: rgba(0,0,0,0.95);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    visibility: hidden; /* Ban đầu hoàn toàn vô hình */
+    transition: all 0.3s ease;
+    z-index: 2000; /* Nằm đè lên trên tất cả mọi thứ */
+}
+
+/* HIỆN LIGHTBOX: Chỉ khi cái ID của lightbox này trùng với cái link đang click (#lightbox-1) */
+.lightbox:target {
+    opacity: 1;
+    visibility: visible;
+}
+
+.lightbox img {
+    max-width: 90%;
+    max-height: 80vh;
+    border-radius: 8px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+}
+
+/* Nút X để đóng (Thực chất là click để trỏ link về lại #portfolio) */
+.lightbox-close {
+    position: absolute;
+    top: 30px;
+    right: 40px;
+    font-size: 3rem;
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.lightbox-close:hover {
+    color: var(--color-primary);
+}
