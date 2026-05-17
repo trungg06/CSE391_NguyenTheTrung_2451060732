@@ -44,3 +44,27 @@
   padding-top: 8rem !important;
   padding-bottom: 8rem !important;
 }
+/* ========================================= */
+/* HOÀN THIỆN BẢNG MÀU (COLOR PALETTE)       */
+/* ========================================= */
+:root {
+  /* Màu nền body hơi ngả xám xanh rất nhạt */
+  --bs-body-bg: #f8fafc;
+
+  /* Màu chữ tổng thể thành xanh đen (slate) thay vì đen tuyền */
+  --bs-body-color: #334155;
+
+  /* Đổi màu tối (Dark) cho tiêu đề thành màu slate đậm */
+  --bs-dark: #0f172a;
+  --bs-dark-rgb: 15, 23, 42;
+}
+
+/* Ép các thẻ heading dùng đúng màu tối mới */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--bs-dark);
+}
