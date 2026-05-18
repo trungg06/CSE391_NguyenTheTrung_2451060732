@@ -1,0 +1,31 @@
+/* Xếp hạng từ thấp đến cao */
+* {
+  color: black;
+} /* 0,0,0 */
+p {
+  color: gray;
+} /* 0,0,1 */
+.text {
+  color: yellow;
+} /* 0,1,0 */
+.text.highlight {
+  color: orange;
+} /* 0,2,0 */
+p.text.highlight {
+  color: pink;
+} /* 0,2,1 */
+#demo {
+  color: blue;
+} /* 1,0,0 */
+p#demo {
+  color: purple;
+} /* 1,0,1 */
+#demo.text {
+  color: brown;
+} /* 1,1,0 */
+#demo.text.highlight {
+  color: red;
+} /* 1,2,0 */
+p#demo.text.highlight {
+  color: green;
+} /* 1,2,1 -> ĐIỂM CAO NHẤT (SẼ HIỂN THỊ MÀU NÀY) */

@@ -1,0 +1,55 @@
+/* --- Phần 1 --- */
+.box-container {
+  margin-bottom: 50px;
+}
+
+.box {
+  width: 300px;
+  padding: 20px;
+  border: 5px solid black;
+  margin: 10px;
+  background-color: #e3f2fd;
+  display: inline-block; /* Để 2 hộp nằm ngang nhau */
+}
+
+.box-1 {
+  box-sizing: content-box; /* Mặc định */
+}
+
+.box-2 {
+  box-sizing: border-box; /* Ép kích thước */
+}
+
+/* --- Phần 2 --- */
+.layout-container {
+  width: 1000px;
+  background-color: #eee;
+  border: 2px solid red; /* Viền đỏ để thấy ranh giới 1000px */
+  display: flex; /* Dùng flex để dàn ngang dễ dàng */
+}
+
+/* Áp dụng border-box cho cả 3 cột để không bị vỡ layout */
+.sidebar,
+.content,
+.ads {
+  box-sizing: border-box;
+  border: 1px solid #999;
+}
+
+.sidebar {
+  width: 250px;
+  padding: 15px;
+  background-color: #d1c4e9;
+}
+
+.content {
+  width: 500px;
+  padding: 20px;
+  background-color: #fff;
+}
+
+.ads {
+  width: 250px;
+  padding: 15px;
+  background-color: #ffccbc;
+}
