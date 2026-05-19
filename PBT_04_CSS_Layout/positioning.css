@@ -1,0 +1,91 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  padding-top: 60px; /* Chừa chỗ cho fixed header */
+  font-family: sans-serif;
+}
+
+/* 1. Fixed Header */
+.fixed-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 60px;
+  background-color: #333;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+  z-index: 1000;
+}
+.fixed-header a {
+  color: white;
+  text-decoration: none;
+}
+
+.container {
+  display: flex;
+  max-width: 1000px;
+  margin: 20px auto;
+  gap: 20px;
+}
+
+/* 2. Sticky Sidebar */
+.sticky-sidebar {
+  position: sticky;
+  top: 80px; /* Dính dưới header 60px + 20px gap */
+  width: 250px;
+  height: 300px;
+  background-color: #f4f4f4;
+  padding: 20px;
+  border: 1px solid #ccc;
+}
+.content {
+  flex: 1;
+}
+
+/* 3. Relative Card & Absolute Badge */
+.product-card {
+  position: relative;
+  width: 200px;
+  padding: 20px;
+  border: 1px solid #ddd;
+  background-color: white;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+.badge-hot {
+  position: absolute;
+  top: -10px;
+  right: -10px; /* Góc phải trên */
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: red;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  font-size: 12px;
+}
+
+/* 4. Scroll to top button */
+.scroll-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+}

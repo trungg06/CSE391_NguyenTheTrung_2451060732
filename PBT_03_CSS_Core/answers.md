@@ -44,9 +44,6 @@
 7. `a[href="/"]` → Chọn: **Home**
 8. `.top-bar.dark h1` → Chọn: **ShopTLU**
 
-_Ảnh chụp màn hình kiểm chứng:_
-![Kết quả câu A2](A2.png)
-
 ### Câu A3 — Tính toán Box Model
 
 **Trường hợp 1: content-box (mặc định)**
@@ -89,10 +86,6 @@ _Ảnh chụp màn hình kiểm chứng:_
 - Hộp 1 (content-box): chiều rộng thực tế = **350px** (Lấy 300px cộng thêm padding và border).
 - Hộp 2 (border-box): chiều rộng thực tế = **300px** (Kích thước bị ép cứng, padding và border lấn ngược vào trong làm hẹp phần content).
 - _Giải thích sự khác biệt:_ `box-sizing: border-box` giúp kiểm soát kích thước tổng thể dễ dàng hơn, không bị phình to ra khi thêm padding hoặc border giống như `content-box` mặc định.
-
-_Ảnh chụp DevTools Box Model:_
-![DevTools Hộp 1](B2Box1.png)
-![DevTools Hộp 2](B2Box2.png)
 
 ### Bài B3 — Specificity Battle
 
