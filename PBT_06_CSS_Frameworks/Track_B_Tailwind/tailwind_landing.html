@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="vi" class="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tailwind Landing Page</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        // Cấu hình để bật tắt dark mode thủ công
+        tailwind.config = { darkMode: 'class' }
+    </script>
+</head>
+<body class="bg-gray-50 dark:bg-gray-900 text-gray-800 dark:text-gray-100 transition-colors duration-300">
+
+    <nav class="flex justify-between items-center p-4 lg:px-8 bg-white dark:bg-gray-800 shadow-md sticky top-0 z-50">
+        <div class="text-2xl font-bold text-blue-600 dark:text-blue-400">TailBrand</div>
+        <div class="hidden md:flex space-x-6 items-center">
+            <a href="#" class="hover:text-blue-500 font-medium transition-colors">Trang chủ</a>
+            <a href="#" class="hover:text-blue-500 font-medium transition-colors">Sản phẩm</a>
+            <button onclick="document.documentElement.classList.toggle('dark')" class="px-4 py-2 bg-gray-200 dark:bg-gray-700 rounded-lg text-sm hover:bg-gray-300 dark:hover:bg-gray-600">Đổi Giao Diện</button>
+        </div>
+    </nav>
+
+    <section class="w-full bg-blue-100 dark:bg-gray-800 py-20 text-center border-b dark:border-gray-700">
+        <div class="max-w-3xl mx-auto px-4">
+            <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold mb-6 text-gray-900 dark:text-white">Tương Lai Của CSS</h1>
+            <p class="text-lg md:text-xl text-gray-600 dark:text-gray-400 mb-8">Xây dựng giao diện web siêu tốc với Utility-First Framework.</p>
+            <button class="px-8 py-3 bg-blue-600 text-white rounded-full font-bold hover:bg-blue-700 shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-1">Bắt Đầu Ngay</button>
+        </div>
+    </section>
+
+    <section class="max-w-7xl mx-auto py-16 px-4 sm:px-6 lg:px-8">
+        <h2 class="text-3xl font-bold mb-8 text-center">Sản Phẩm Khuyên Dùng</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            
+            <div class="bg-white dark:bg-gray-800 rounded-xl shadow-md hover:shadow-2xl transition-shadow duration-300 overflow-hidden border dark:border-gray-700 group">
+                <div class="h-48 bg-gray-200 dark:bg-gray-700 w-full overflow-hidden">
+                    <div class="w-full h-full bg-blue-200 dark:bg-blue-900 transform group-hover:scale-110 transition-transform duration-500"></div>
+                </div>
+                <div class="p-5">
+                    <h3 class="text-xl font-semibold mb-2">Giày Thể Thao</h3>
+                    <p class="text-gray-500 dark:text-gray-400 text-sm mb-4 line-clamp-2">Sản phẩm chất lượng cao mang lại sự thoải mái tuyệt đối cho đôi chân của bạn.</p>
+                    <div class="flex justify-between items-center mt-4">
+                        <span class="text-2xl font-bold text-blue-600 dark:text-blue-400">1.200k</span>
+                        <button class="px-4 py-2 bg-gray-900 dark:bg-gray-100 text-white dark:text-gray-900 font-medium rounded-lg hover:bg-gray-700 dark:hover:bg-white transition-colors">Mua</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="bg-white dark:bg-gray-800 rounded-xl shadow-md hover:shadow-2xl transition-shadow duration-300 overflow-hidden border dark:border-gray-700 group"><div class="h-48 bg-gray-200 dark:bg-gray-700 w-full"></div><div class="p-5"><h3 class="text-xl font-semibold mb-2">Áo Thun Basic</h3><div class="flex justify-between items-center mt-4"><span class="text-2xl font-bold text-blue-600 dark:text-blue-400">250k</span><button class="px-4 py-2 bg-gray-900 dark:bg-gray-100 text-white dark:text-gray-900 font-medium rounded-lg">Mua</button></div></div></div>
+            <div class="bg-white dark:bg-gray-800 rounded-xl shadow-md hover:shadow-2xl transition-shadow duration-300 overflow-hidden border dark:border-gray-700 group"><div class="h-48 bg-gray-200 dark:bg-gray-700 w-full"></div><div class="p-5"><h3 class="text-xl font-semibold mb-2">Balo Chống Nước</h3><div class="flex justify-between items-center mt-4"><span class="text-2xl font-bold text-blue-600 dark:text-blue-400">550k</span><button class="px-4 py-2 bg-gray-900 dark:bg-gray-100 text-white dark:text-gray-900 font-medium rounded-lg">Mua</button></div></div></div>
+            <div class="bg-white dark:bg-gray-800 rounded-xl shadow-md hover:shadow-2xl transition-shadow duration-300 overflow-hidden border dark:border-gray-700 group"><div class="h-48 bg-gray-200 dark:bg-gray-700 w-full"></div><div class="p-5"><h3 class="text-xl font-semibold mb-2">Đồng Hồ Thông Minh</h3><div class="flex justify-between items-center mt-4"><span class="text-2xl font-bold text-blue-600 dark:text-blue-400">2.500k</span><button class="px-4 py-2 bg-gray-900 dark:bg-gray-100 text-white dark:text-gray-900 font-medium rounded-lg">Mua</button></div></div></div>
+
+        </div>
+    </section>
+
+    <footer class="bg-gray-900 text-gray-400 py-12 text-center border-t border-gray-800">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-7xl mx-auto px-6">
+            <div><h4 class="text-white font-bold mb-4 uppercase tracking-wider">Công Ty</h4><p class="hover:text-white cursor-pointer">Về chúng tôi</p></div>
+            <div><h4 class="text-white font-bold mb-4 uppercase tracking-wider">Dịch Vụ</h4><p class="hover:text-white cursor-pointer">Blog</p></div>
+            <div><h4 class="text-white font-bold mb-4 uppercase tracking-wider">Pháp Lý</h4><p class="hover:text-white cursor-pointer">Chính sách bảo mật</p></div>
+        </div>
+        <p class="mt-8 text-sm">© 2026 Tailwind Demo.</p>
+    </footer>
+
+</body>
+</html>

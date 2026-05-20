@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tailwind UI Components</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 p-4 md:p-8 flex flex-col md:flex-row gap-8 min-h-screen">
+
+<aside class="w-full md:w-64 bg-white shadow-lg rounded-xl p-5 flex flex-col gap-2 shrink-0 h-fit sticky top-8">
+    <div class="text-xl font-bold text-gray-800 mb-4 px-2">UI Library</div>
+    <a href="#" class="px-4 py-3 bg-indigo-50 text-indigo-700 rounded-lg font-semibold transition-colors">Buttons</a>
+    <a href="#" class="px-4 py-3 text-gray-600 hover:bg-gray-50 hover:text-gray-900 rounded-lg font-medium transition-colors">Forms</a>
+    <a href="#" class="px-4 py-3 text-gray-600 hover:bg-gray-50 hover:text-gray-900 rounded-lg font-medium transition-colors">Alerts</a>
+</aside>
+
+<main class="flex-1 space-y-12 bg-white p-8 rounded-xl shadow-lg border border-gray-200">
+    
+    <section>
+        <h2 class="text-2xl font-bold border-b pb-3 mb-6 text-gray-800">1. Buttons & States</h2>
+        <div class="flex flex-wrap gap-4 items-center">
+            <button class="px-5 py-2.5 bg-indigo-600 text-white font-medium rounded-lg hover:bg-indigo-700 focus:ring-4 focus:ring-indigo-300 transition-all">Primary</button>
+            <button class="px-5 py-2.5 bg-gray-200 text-gray-800 font-medium rounded-lg hover:bg-gray-300 focus:ring-4 focus:ring-gray-100 transition-all">Secondary</button>
+            <button class="px-5 py-2.5 border-2 border-indigo-600 text-indigo-600 font-medium rounded-lg hover:bg-indigo-50 focus:ring-4 focus:ring-indigo-100 transition-all">Outline</button>
+            <button class="px-5 py-2.5 bg-indigo-300 text-white font-medium rounded-lg cursor-not-allowed" disabled>Disabled</button>
+            
+            <button class="px-5 py-2.5 bg-indigo-600 text-white font-medium rounded-lg flex items-center gap-2 hover:bg-indigo-700 transition-all">
+                <svg class="animate-spin h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                    <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                    <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                </svg>
+                Processing...
+            </button>
+        </div>
+    </section>
+
+    <section class="max-w-md">
+        <h2 class="text-2xl font-bold border-b pb-3 mb-6 text-gray-800">2. Form Inputs</h2>
+        <div class="space-y-5">
+            <div>
+                <label class="block text-sm font-semibold text-gray-700 mb-1">Email Address</label>
+                <input type="email" class="w-full border border-gray-300 rounded-lg px-4 py-2.5 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-all" placeholder="name@example.com">
+            </div>
+            
+            <div>
+                <label class="block text-sm font-semibold text-gray-700 mb-1">Chức vụ</label>
+                <select class="w-full border border-gray-300 rounded-lg px-4 py-2.5 focus:outline-none focus:ring-2 focus:ring-indigo-500 bg-white">
+                    <option>Sinh viên</option>
+                    <option>Giảng viên</option>
+                </select>
+            </div>
+
+            <div class="flex items-center gap-3">
+                <input type="checkbox" id="terms" class="w-5 h-5 text-indigo-600 rounded border-gray-300 focus:ring-indigo-500 cursor-pointer">
+                <label for="terms" class="text-sm font-medium text-gray-700 cursor-pointer">Tôi đồng ý với các điều khoản</label>
+            </div>
+        </div>
+    </section>
+
+    <section class="max-w-2xl">
+        <h2 class="text-2xl font-bold border-b pb-3 mb-6 text-gray-800">3. Alerts (Thông báo)</h2>
+        <div class="space-y-4">
+            <div class="bg-emerald-50 border-l-4 border-emerald-500 p-4 rounded-r-lg flex justify-between items-start shadow-sm">
+                <div class="flex items-center text-emerald-800">
+                    <span class="font-bold mr-2">Thành công!</span> Dữ liệu đã được lưu lại.
+                </div>
+                <button class="text-emerald-500 hover:text-emerald-900 font-bold text-xl leading-none">&times;</button>
+            </div>
+
+            <div class="bg-rose-50 border-l-4 border-rose-500 p-4 rounded-r-lg flex justify-between items-start shadow-sm">
+                <div class="flex items-center text-rose-800">
+                    <span class="font-bold mr-2">Lỗi!</span> Vui lòng kiểm tra lại thông tin.
+                </div>
+                <button class="text-rose-500 hover:text-rose-900 font-bold text-xl leading-none">&times;</button>
+            </div>
+            
+            <div class="bg-blue-50 border-l-4 border-blue-500 p-4 rounded-r-lg flex justify-between items-start shadow-sm">
+                <div class="flex items-center text-blue-800">
+                    <span class="font-bold mr-2">Lưu ý:</span> Hệ thống sẽ bảo trì vào 12h đêm nay.
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+</body>
+</html>

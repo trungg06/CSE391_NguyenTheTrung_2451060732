@@ -1,0 +1,58 @@
+body { display: flex; justify-content: center; align-items: center; height: 100vh; background: #f0f0f0; font-family: sans-serif;}
+
+/* 1. Card Hover (Translate Y + Shadow) */
+.card-anim {
+    background: white; padding: 20px; border-radius: 10px; width: 250px; text-align: center;
+    transition: all 0.3s ease; /* Bắt buộc có transition để mượt */
+}
+.card-anim:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 20px rgba(0,0,0,0.15);
+}
+
+/* 3. Image Zoom Hover */
+.img-zoom-container {
+    overflow: hidden; /* Giấu phần ảnh phình ra */
+    border-radius: 8px; margin-bottom: 15px;
+}
+.img-mockup {
+    height: 150px; background: #3498db; color: white; display: flex; align-items: center; justify-content: center;
+    transition: transform 0.4s ease;
+}
+.card-anim:hover .img-mockup {
+    transform: scale(1.1); /* Phóng to 10% */
+}
+
+/* 2. Button Hover */
+.btn-buy {
+    background-color: #2ecc71; color: white; border: none; padding: 10px 20px; border-radius: 20px;
+    cursor: pointer; font-weight: bold;
+    transition: all 0.3s ease;
+}
+.btn-buy:hover {
+    background-color: #27ae60;
+    color: #fff;
+    transform: scale(1.05); /* To lên một chút */
+}
+
+/* 4. Loading Spinner Keyframes */
+.spinner {
+    width: 40px; height: 40px; margin: 0 auto 20px auto;
+    border: 4px solid #ddd;
+    border-top: 4px solid #3498db;
+    border-radius: 50%;
+    animation: spin 1s linear infinite; /* Gọi animation */
+}
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* 5. Fade-in on Load */
+.fade-in {
+    animation: fadeInAnim 1s ease-out forwards;
+}
+@keyframes fadeInAnim {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}

@@ -1,0 +1,51 @@
+// Import các partial files
+@import 'variables';
+@import 'mixins';
+
+body {
+    background-color: $bg-light;
+    font-family: $font-primary;
+    color: $text-dark;
+}
+
+// Ứng dụng Nesting và Mixins
+.card {
+    background: white;
+    padding: $spacing-md;
+    @include card-shadow;
+    
+    .card-title {
+        color: $primary-color;
+        font-size: 1.2rem;
+    }
+    
+    .card-image {
+        @include flex-center;
+        height: 150px;
+        background: #ccc;
+    }
+
+    // Parent selector &
+    &:hover {
+        transform: translateY(-5px);
+    }
+    
+    &.featured {
+        border: 2px solid $secondary-color;
+    }
+}
+
+// Ứng dụng Mixin Responsive
+.product-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: $spacing-md;
+
+    @include respond-to($breakpoint-tablet) {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include respond-to($breakpoint-desktop) {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
