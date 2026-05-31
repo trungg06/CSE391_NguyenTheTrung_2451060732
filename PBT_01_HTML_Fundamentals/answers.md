@@ -164,3 +164,32 @@ Khi bạn dùng thẻ `<button>` chuẩn, trình duyệt tự động cung cấp
 
 **Vậy khi nào `<div>` thực sự phù hợp?**
 Thẻ `<div>` (một thẻ vô nghĩa) sinh ra để làm **wrapper (khung chứa) cho mục đích styling**. Trường hợp thực tế hợp lý nhất là khi bạn cần nhóm các phần tử lại để áp dụng CSS Flexbox hoặc Grid (ví dụ: `<div class="flex-container">`), hoặc tạo bóng đổ, giới hạn chiều rộng trang. Trong những lúc cấu trúc không mang ý nghĩa ngữ nghĩa nào, `<div>` chính là sự lựa chọn hoàn hảo.
+### Bài B4 (15đ) — Phân tích trang web thật
+
+**Trang web khảo sát:** `thegioididong.com`
+
+**1. Phân tích Semantic HTML5 (Tab Elements):**
+
+* *(Chèn ảnh Screenshot Elements minh họa các thẻ tại đây)*
+* **3 thẻ Semantic HTML5 mà trang sử dụng:**
+  1. `<header>`: Được sử dụng ở trên cùng của trang để bao bọc toàn bộ khu vực logo, thanh tìm kiếm và các menu điều hướng tiện ích.
+  2. `<footer>`: Nằm ở dưới cùng của trang, chứa các thông tin liên hệ của công ty, tổng đài hỗ trợ và các liên kết chính sách bảo hành.
+  3. `<section>`: Được sử dụng để phân chia các khu vực nội dung lớn, ví dụ như khối chứa danh sách "Điện thoại nổi bật" hay "Laptop giá sốc".
+* **2 thẻ KHÔNG dùng đúng semantic (Lạm dụng thẻ phi ngữ nghĩa):**
+  1. Trang web thường sử dụng thẻ `<li>` hoặc `<div class="item">` để bọc một khối sản phẩm (Product Card). Theo chuẩn HTML5, một sản phẩm độc lập nên được bọc bằng thẻ `<article>`.
+  2. Đối với tiêu đề của một số sản phẩm/khối nhỏ, thay vì dùng các thẻ heading chuẩn như `<h3>` hay `<h4>` để tạo cấu trúc phân cấp cho bot đọc, trang web lại lạm dụng thẻ `<div>` hoặc `<span>` kèm class để style kích thước chữ.
+
+**2. Phân tích Bảng - Table (Mục Cấu hình chi tiết sản phẩm):**
+
+* *(Chèn ảnh Screenshot Table phần Cấu hình sản phẩm tại đây)*
+* **Nội dung hiển thị:** Bảng này hiển thị các thông số kỹ thuật chi tiết của thiết bị như: Kích thước và công nghệ màn hình, hệ điều hành, độ phân giải camera, chip xử lý, dung lượng RAM, ROM và dung lượng Pin.
+* **Cấu trúc `<thead>`, `<tbody>`:** Thực tế, Thế Giới Di Động cấu trúc phần thông số khá đa dạng. Ở những khu vực sử dụng thẻ `<table>` để làm bảng thông số, họ thường lập tức mở thẻ `<tbody>` chứa các dòng `<tr>` và bỏ qua hoàn toàn thẻ `<thead>`.
+
+**3. Phân tích Biểu mẫu - Form (Thanh tìm kiếm chính):**
+
+* *(Chèn ảnh Screenshot Form Tìm kiếm tại đây)*
+* **Thuộc tính action và method:** * `action`: Trỏ về đường dẫn xử lý kết quả tìm kiếm (Ví dụ: `action="/tim-kiem"`).
+  * `method`: Sử dụng phương thức `GET` (để từ khóa tìm kiếm được đính trực tiếp lên URL, giúp người dùng có thể tải lại trang, copy hoặc chia sẻ link kết quả dễ dàng).
+* **Input types được dùng:**
+  * `<input type="text">` (hoặc đôi khi là `type="search"`): Dành cho người dùng nhập từ khóa tìm kiếm.
+  * `<button type="submit">` (hoặc đôi khi dùng thẻ `<i>` kết hợp sự kiện JavaScript): Dùng làm nút nhấn kích hoạt hành động tìm kiếm.
