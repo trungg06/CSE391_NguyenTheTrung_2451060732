@@ -81,3 +81,86 @@ Trang web lạm dụng thẻ `<div>` cho mọi thành phần, thiếu hoàn toà
 1. **Khó làm Responsive:** Layout bằng bảng rất cứng nhắc, cực kỳ khó để sắp xếp lại các khối hiển thị cho phù hợp với các thiết bị màn hình nhỏ như điện thoại.
 2. **Code rối rắm và nặng nề:** Dùng table làm layout bắt buộc phải lồng ghép rất nhiều thẻ `<table>`, `<tr>`, `<td>` vào nhau, làm code HTML trở nên khó đọc và khó bảo trì.
 3. **Ảnh hưởng xấu đến Accessibility:** Table vốn được thiết kế để hiển thị dữ liệu có cấu trúc dòng/cột. Dùng nó làm layout sẽ làm các phần mềm đọc màn hình (dành cho người khiếm thị) đọc sai cấu trúc logic của trang web.
+### Câu C1 (10đ) — Thiết kế cấu trúc
+
+Dưới đây là cấu trúc HTML chuẩn Semantic cho trang chi tiết sản phẩm. Mỗi thẻ đều được chú thích rõ lý do sử dụng:
+
+    <header>
+        <nav>
+            <ul>
+                <li><a href="/">Trang chủ</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <nav aria-label="breadcrumb">
+        <ol>
+            <li><a href="/">Trang chủ</a></li>
+            <li><a href="/dien-thoai">Điện thoại</a></li>
+            <li><a href="/iphone-16" aria-current="page">iPhone 16</a></li>
+        </ol>
+    </nav>
+
+    <main>
+        <article>
+            <section id="product-gallery">
+                <figure>
+                    <img src="main.jpg" alt="Mặt trước iPhone 16">
+                    <img src="thumb1.jpg" alt="Mặt sau iPhone 16">
+                </figure>
+            </section>
+
+            <section id="product-info">
+                <h1>iPhone 16 Pro Max</h1>
+                <p class="price">25.990.000đ</p>
+                <p class="description">Mô tả ngắn về sản phẩm...</p>
+            </section>
+
+            <section id="product-specs">
+                <h2>Thông số kỹ thuật</h2>
+                <table>
+                    <tbody>
+                        <tr>
+                            <th scope="row">Màn hình</th>
+                            <td>OLED 6.7 inch</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+
+            <section id="product-reviews">
+                <h2>Đánh giá từ khách hàng</h2>
+                <article class="review-item">
+                    <h3>Khách hàng A</h3>
+                    <p>Sản phẩm rất tốt!</p>
+                </article>
+            </section>
+        </article>
+
+        <aside id="related-products">
+            <h2>Sản phẩm tương tự</h2>
+            <ul>
+                <li><a href="/iphone-15">iPhone 15 Pro</a></li>
+            </ul>
+        </aside>
+    </main>
+
+    <footer>
+        <p>© 2026 Cửa hàng điện thoại</p>
+    </footer>
+
+---
+
+### Câu C2 (10đ) — So sánh & Tranh luận
+
+Quan điểm "chỉ cần dùng `<div>` cho mọi thứ" là một tư duy phổ biến ở những người mới học CSS, vì `<div>` kết hợp với class có thể tạo ra bất kỳ giao diện trực quan nào. Tuy nhiên, việc bỏ qua Semantic HTML lại mang đến những hậu quả kỹ thuật nghiêm trọng. 
+
+**Thứ nhất là về SEO (Tối ưu hóa công cụ tìm kiếm).** Các bot của Google (Googlebot) không có "mắt" để nhìn thấy màu sắc hay kích thước chữ như con người. Chúng đọc mã nguồn để lập chỉ mục. Một thẻ `<h1>` hay `<article>` phát đi tín hiệu mạnh mẽ rằng đây là nội dung cốt lõi của trang, giúp từ khóa dễ lên top. Nếu chỉ dùng `<div class="title">`, bot sẽ coi đó là một đoạn text vô thưởng vô phạt, làm giảm đáng kể thứ hạng tìm kiếm.
+
+**Thứ hai là về Accessibility (Khả năng tiếp cận).** Những người khiếm thị sử dụng phần mềm đọc màn hình (Screen Readers) để duyệt web. Các phần mềm này cho phép người dùng nhảy cóc nhanh chóng giữa các khối `<nav>`, `<main>`, hay `<footer>`. Nếu toàn bộ trang là một "bể" `<div>`, người khiếm thị sẽ phải nghe trình duyệt đọc từng dòng một từ trên xuống dưới một cách cực kỳ ức chế.
+
+**Ví dụ thực tế chứng minh:** Thẻ `<button>` và `<div class="btn">`. 
+Khi bạn dùng thẻ `<button>` chuẩn, trình duyệt tự động cung cấp khả năng focus bằng phím `Tab`, và kích hoạt sự kiện click bằng phím `Enter` hoặc `Space`. Nếu bạn dùng `<div class="btn">`, bạn sẽ phải viết thêm rất nhiều mã JavaScript và thuộc tính `tabindex` chỉ để "bắt chước" lại những tính năng mà thẻ `<button>` được hỗ trợ miễn phí từ đầu.
+
+**Vậy khi nào `<div>` thực sự phù hợp?**
+Thẻ `<div>` (một thẻ vô nghĩa) sinh ra để làm **wrapper (khung chứa) cho mục đích styling**. Trường hợp thực tế hợp lý nhất là khi bạn cần nhóm các phần tử lại để áp dụng CSS Flexbox hoặc Grid (ví dụ: `<div class="flex-container">`), hoặc tạo bóng đổ, giới hạn chiều rộng trang. Trong những lúc cấu trúc không mang ý nghĩa ngữ nghĩa nào, `<div>` chính là sự lựa chọn hoàn hảo.
