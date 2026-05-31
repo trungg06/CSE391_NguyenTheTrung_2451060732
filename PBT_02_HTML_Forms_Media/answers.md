@@ -33,7 +33,7 @@
   * **Dự đoán:** Trình duyệt chặn submit, hiện thông báo yêu cầu tăng độ dài lên ít nhất 8 ký tự.
   * **Giải thích:** Thuộc tính `minlength` ép buộc chuỗi nhập vào phải đạt một độ dài số lượng ký tự tối thiểu.
 
-*(Tạo file `validation_test.html`, thử nghiệm thực tế và chèn ảnh screenshot vào đây nhé!)*
+
 
 ---
 
@@ -76,3 +76,60 @@ Dùng khi bức ảnh chỉ mang tính chất minh họa chèn thẳng vào lu�
 Dùng khi bức ảnh là một khối nội dung độc lập, bắt buộc phải có dòng chú thích (`<figcaption>`) gắn chặt với nó về mặt ngữ nghĩa. Khối này có thể bị dời đi nơi khác mà không làm mất đi ý nghĩa của ngữ cảnh.
 * *Ví dụ:* 1. Một sơ đồ luồng xử lý trong bài blog công nghệ, có chú thích "Hình 1: Cấu trúc hệ thống".
   2. Một ảnh sản phẩm nổi bật nằm trên trang tạp chí có hiển thị tên tác giả chụp bức ảnh ở dòng chú thích.
+  ### Câu C1 (10đ) — Debug Form
+
+Lỗi 1: Dòng 1 — Thẻ <form> thiếu thuộc tính `action` và `method`.
+Sửa: <form action="/submit" method="POST">
+
+Lỗi 2: Dòng 2 — Input "Tên" không có <label for="...">, thiếu `id` và `name`.
+Sửa: <label for="fullName">Tên:</label> <input type="text" id="fullName" name="fullName" required>
+
+Lỗi 3: Dòng 4 — Input "Email" lạm dụng `placeholder` thay cho <label>.
+Sửa: <label for="email">Email:</label> <input type="email" id="email" name="email" placeholder="Ví dụ: abc@gmail.com" required>
+
+Lỗi 4: Dòng 6, 7 — Input "Mật khẩu" thiếu <label>, `id`, `name` và không liên kết với nhau.
+Sửa: 
+<label for="pwd">Mật khẩu:</label> <input type="password" id="pwd" name="password" required>
+<label for="confirmPwd">Nhập lại mật khẩu:</label> <input type="password" id="confirmPwd" name="confirmPassword" required>
+
+Lỗi 5: Dòng 9 — Input "Phone" dùng sai type, hardcode `value` và thiếu thẻ <label>.
+Sửa: <label for="phone">Phone:</label> <input type="tel" id="phone" name="phone" placeholder="0901234567" pattern="[0-9]{10}">
+
+Lỗi 6: Dòng 11, 12, 13 — Thẻ <select> thiếu <label>, `name`, `id` và các <option> thiếu `value`.
+Sửa:
+<label for="city">Thành phố:</label>
+<select id="city" name="city" required>
+    <option value="">Chọn thành phố</option>
+    <option value="hn">Hà Nội</option>
+    <option value="hcm">TP.HCM</option>
+</select>
+
+Lỗi 7: Dòng 16, 17, 18 — Thẻ <label> "Tôi đồng ý" thiếu checkbox thực sự.
+Sửa:
+<label for="terms">
+    <input type="checkbox" id="terms" name="terms" required> Tôi đồng ý điều khoản
+</label>
+
+Lỗi 8: Toàn bộ form — Hoàn toàn không sử dụng HTML5 Validation.
+Sửa: Cần thêm thuộc tính `required`, `pattern`, `minlength`... vào các trường tương ứng như đã bổ sung ở các mã sửa bên trên.
+
+---
+
+### Câu C2 (10đ) — Thiết kế chiến lược Validation
+
+1. Viết `pattern` regex:
+- CMND/CCCD: `pattern="[0-9]{12}"`
+- Số tài khoản: `pattern="[0-9]{10,15}"`
+
+2. HTML5 validation đủ an toàn cho ứng dụng ngân hàng chưa? Tại sao?
+- Trả lời: TUYỆT ĐỐI CHƯA AN TOÀN. 
+- Tại sao: HTML5 Validation chỉ chạy ở phía Client (trình duyệt). Kẻ gian có thể dễ dàng vô hiệu hóa bằng cách tắt JavaScript, xóa thuộc tính validation qua DevTools (F12), hoặc dùng công cụ như Postman gửi thẳng request độc hại đến Server. HTML5 chỉ giúp trải nghiệm người dùng (UX) tốt hơn, không có tác dụng bảo mật.
+
+3. 3 loại validation mà HTML5 KHÔNG THỂ làm được (phải dùng JS/Backend):
+- Kiểm tra tính duy nhất với Database (ví dụ: Số CCCD này đã tồn tại trong hệ thống chưa).
+- Kiểm tra logic nghiệp vụ phức tạp (ví dụ: Khách hàng đã đủ 18 tuổi chưa dựa trên ngày sinh vừa nhập, hoặc check 2 ô mật khẩu có khớp nhau không).
+- Xác thực nội dung file thực tế (Ví dụ: Chống tải lên file mã độc bị đổi đuôi thành .jpg).
+
+4. 2 rủi ro bảo mật nếu chỉ validate trên Frontend mà không validate Backend:
+- SQL Injection: Hacker gửi chuỗi mã độc (vd: ' OR 1=1 --) vào ô input. Nếu backend không chặn, mã này sẽ chọc thẳng vào Database, gây rò rỉ hoặc mất toàn bộ dữ liệu ngân hàng.
+- Cross-Site Scripting (XSS): Hacker chèn mã JavaScript độc hại vào input. Nếu backend lưu thẳng vào Database, đoạn mã sẽ chạy trên trình duyệt của nhân viên ngân hàng hoặc người dùng khác, dẫn đến mất cắp phiên đăng nhập (session/cookie).

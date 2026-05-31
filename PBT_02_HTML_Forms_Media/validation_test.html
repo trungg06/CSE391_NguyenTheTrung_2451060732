@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kiểm thử Validation - Câu A2</title>
+    <style>
+        body { font-family: sans-serif; padding: 20px; background-color: #f9f9f9; }
+        .container { max-width: 600px; margin: 0 auto; background: #fff; padding: 30px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+        .form-group { margin-bottom: 25px; padding-bottom: 15px; border-bottom: 1px solid #eee; }
+        .form-group:last-child { border-bottom: none; }
+        label { display: block; font-weight: bold; margin-bottom: 8px; color: #333; }
+        .description { font-size: 13px; color: #666; margin-bottom: 10px; font-style: italic; }
+        input { width: 100%; padding: 10px; font-size: 16px; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box; }
+        button { display: block; width: 100%; padding: 12px; background-color: #007bff; color: white; border: none; border-radius: 4px; font-size: 16px; font-weight: bold; cursor: pointer; margin-top: 20px; }
+        button:hover { background-color: #0056b3; }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>Bài Test Form Validation</h2>
+        <p>Bấm Submit ở từng form để xem trình duyệt báo lỗi như thế nào.</p>
+
+        <form action="#" method="GET">
+            <div class="form-group">
+                <label>Trường hợp 1: <code>required value=""</code></label>
+                <div class="description">Yêu cầu: Không được để trống. Kịch bản: Bấm submit ngay.</div>
+                <input type="text" required value="">
+                <button type="submit">Thử nghiệm TH 1</button>
+            </div>
+        </form>
+
+        <form action="#" method="GET">
+            <div class="form-group">
+                <label>Trường hợp 2: <code>type="email" value="abc"</code></label>
+                <div class="description">Yêu cầu: Phải đúng chuẩn email (có @). Kịch bản: Đã nhập sẵn chữ "abc".</div>
+                <input type="email" value="abc">
+                <button type="submit">Thử nghiệm TH 2</button>
+            </div>
+        </form>
+
+        <form action="#" method="GET">
+            <div class="form-group">
+                <label>Trường hợp 3: <code>type="number" min="1" max="10" value="15"</code></label>
+                <div class="description">Yêu cầu: Số nằm trong khoảng 1 đến 10. Kịch bản: Đã nhập số 15.</div>
+                <input type="number" min="1" max="10" value="15">
+                <button type="submit">Thử nghiệm TH 3</button>
+            </div>
+        </form>
+
+        <form action="#" method="GET">
+            <div class="form-group">
+                <label>Trường hợp 4: <code>pattern="[0-9]{10}" value="abc123"</code></label>
+                <div class="description">Yêu cầu: Chỉ chứa đúng 10 chữ số (0-9). Kịch bản: Đã nhập "abc123".</div>
+                <input type="text" pattern="[0-9]{10}" value="abc123">
+                <button type="submit">Thử nghiệm TH 4</button>
+            </div>
+        </form>
+
+        <form action="#" method="GET">
+            <div class="form-group">
+                <label>Trường hợp 5: <code>type="password" minlength="8" value="123"</code></label>
+                <div class="description">Yêu cầu: Độ dài tối thiểu 8 ký tự. Kịch bản: Đã nhập 3 ký tự "123".</div>
+                <input type="password" minlength="8" value="123">
+                <button type="submit">Thử nghiệm TH 5</button>
+            </div>
+        </form>
+
+    </div>
+
+</body>
+</html>
