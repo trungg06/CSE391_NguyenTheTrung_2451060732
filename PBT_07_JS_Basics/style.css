@@ -1,0 +1,84 @@
+/* 1. Reset và Border-box */
+* {
+    box-sizing: border-box;
+}
+
+/* 2. Body styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    color: #333333;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+}
+
+/* 3. Header styling */
+header {
+    background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+    color: #ffffff;
+    padding: 20px;
+    text-align: center;
+}
+
+/* 4. Navigation Links */
+nav {
+    background-color: #ffffff;
+    padding: 15px;
+    text-align: center;
+    border-bottom: 2px solid #e0e0e0;
+}
+
+nav a {
+    text-decoration: none;
+    color: #1e3c72;
+    padding: 10px 15px;
+    margin: 0 5px;
+    font-weight: bold;
+}
+
+nav a:hover {
+    color: #ff5722;
+    text-decoration: underline;
+}
+
+nav a.active {
+    background-color: #1e3c72;
+    color: #ffffff;
+    border-radius: 4px;
+}
+
+/* 5. Table Styling */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+
+table th, table td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: left;
+}
+
+table thead th {
+    background-color: #2a5298;
+    color: #ffffff;
+}
+
+table tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+table tbody tr:hover {
+    background-color: #e3f2fd;
+}
+
+/* 6. Footer */
+footer {
+    background-color: #222222;
+    color: #aaaaaa;
+    text-align: center;
+    padding: 15px;
+    margin-top: 30px;
+}

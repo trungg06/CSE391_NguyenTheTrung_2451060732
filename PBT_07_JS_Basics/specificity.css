@@ -1,0 +1,51 @@
+/* 10 Rules sắp xếp từ Specificity Thấp đến Cao */
+
+/* Rule 1: Specificity (0,0,0) - Universal selector */
+* {
+  color: #cccccc;
+}
+
+/* Rule 2: Specificity (0,0,1) - Element selector */
+p {
+  color: #ff0000;
+}
+
+/* Rule 3: Specificity (0,1,0) - Class selector 1 */
+.text {
+  color: #00ff00;
+}
+
+/* Rule 4: Specificity (0,1,0) - Class selector 2 (thắng do viết sau) */
+.highlight {
+  color: #0000ff;
+}
+
+/* Rule 5: Specificity (0,1,1) - Element + Class */
+p.text {
+  color: #ffff00;
+}
+
+/* Rule 6: Specificity (0,2,0) - Hai Class */
+.text.highlight {
+  color: #ff00ff;
+}
+
+/* Rule 7: Specificity (0,2,1) - Element + Hai Class */
+p.text.highlight {
+  color: #00ffff;
+}
+
+/* Rule 8: Specificity (1,0,0) - ID selector */
+#demo {
+  color: #800080;
+}
+
+/* Rule 9: Specificity (1,0,1) - Element + ID */
+p#demo {
+  color: #008080;
+}
+
+/* Rule 10: Specificity (1,1,0) - ID + Class */
+#demo.text {
+  color: #ff8000;
+}
