@@ -1,0 +1,18 @@
+* { box-sizing: border-box; }
+body { font-family: sans-serif; background: #f5f5f5; display: flex; justify-content: center; padding-top: 50px;}
+.todo-container { background: #fff; width: 500px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+h1 { text-align: center; color: #ead7d7; font-size: 60px; margin: 10px 0; }
+#todoInput { width: 100%; padding: 16px; font-size: 24px; border: none; border-bottom: 1px solid #e6e6e6; outline: none; }
+ul { list-style: none; padding: 0; margin: 0; }
+li { display: flex; align-items: center; padding: 15px; border-bottom: 1px solid #eee; font-size: 20px; transition: all 0.3s; }
+li.completed span { text-decoration: line-through; color: #d9d9d9; }
+li .delete-btn { margin-left: auto; color: #cc9a9a; border: none; background: none; font-size: 20px; cursor: pointer; display: none; }
+li:hover .delete-btn { display: block; }
+li .edit-input { flex: 1; font-size: 20px; padding: 5px; display: none; }
+li.editing span { display: none; }
+li.editing .edit-input { display: block; }
+.footer { display: flex; justify-content: space-between; padding: 10px 15px; font-size: 14px; color: #777; border-top: 1px solid #e6e6e6; }
+.filters button { border: transparent; background: none; cursor: pointer; border-radius: 3px; padding: 3px 7px; }
+.filters button.active { border: 1px solid rgba(175, 47, 47, 0.2); }
+#clearCompleted { background: none; border: none; cursor: pointer; }
+#clearCompleted:hover { text-decoration: underline; }

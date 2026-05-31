@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Keyboard App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <p>Gợi ý: Dùng phím <kbd>←</kbd> <kbd>→</kbd> để đổi ảnh, phím số <kbd>1</kbd>-<kbd>3</kbd>, phím <kbd>Space</kbd> để AutoPlay, <kbd>Ctrl+K</kbd> để mở Command Palette.</p>
+
+    <div class="gallery" tabindex="0" aria-label="Image Gallery">
+        <img id="galleryImg" src="https://placehold.co/600x400/007bff/fff?text=Image+1" alt="Gallery Image">
+        <p id="galleryInfo">Hình 1 / 3</p>
+    </div>
+
+    <div id="cmdPalette" class="palette-overlay hidden" role="dialog" aria-modal="true">
+        <div class="palette">
+            <input type="text" id="cmdInput" placeholder="Type a command..." aria-label="Command Input">
+            <ul id="cmdList"></ul>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

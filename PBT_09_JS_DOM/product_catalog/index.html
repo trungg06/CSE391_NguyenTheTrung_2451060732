@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Product Catalog</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Tech Store</h1>
+        <div class="actions">
+            <button id="themeToggle">🌙 Dark Mode</button>
+            <div class="cart">🛒 <span id="cartBadge">0</span></div>
+        </div>
+    </header>
+
+    <div class="controls">
+        <input type="text" id="searchInput" placeholder="Tìm sản phẩm...">
+        <div id="categoryFilters">
+            <button class="cat-btn active" data-cat="all">All</button>
+            <button class="cat-btn" data-cat="phone">Phone</button>
+            <button class="cat-btn" data-cat="laptop">Laptop</button>
+            <button class="cat-btn" data-cat="tablet">Tablet</button>
+        </div>
+        <select id="sortSelect">
+            <option value="default">Sắp xếp</option>
+            <option value="price-asc">Giá: Thấp đến Cao</option>
+            <option value="price-desc">Giá: Cao đến Thấp</option>
+            <option value="name-asc">Tên: A-Z</option>
+            <option value="rating">Đánh giá cao nhất</option>
+        </select>
+    </div>
+
+    <main id="productList" class="grid"></main>
+
+    <div id="productModal" class="modal hidden">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <div id="modalBody"></div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

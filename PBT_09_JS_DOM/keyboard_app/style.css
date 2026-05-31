@@ -1,0 +1,12 @@
+body { font-family: sans-serif; text-align: center; padding: 50px; }
+kbd { background: #eee; padding: 2px 5px; border-radius: 3px; border: 1px solid #ccc; }
+.gallery { display: inline-block; padding: 10px; border: 2px solid transparent; outline: none; }
+.gallery:focus-visible { border-color: #007bff; border-radius: 8px; } /* Focus management */
+
+.palette-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); display: flex; justify-content: center; padding-top: 100px; z-index: 100;}
+.palette-overlay.hidden { display: none; }
+.palette { background: white; width: 500px; border-radius: 8px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.2); }
+#cmdInput { width: 100%; padding: 15px; font-size: 18px; border: none; border-bottom: 1px solid #eee; outline: none; }
+#cmdList { list-style: none; padding: 0; margin: 0; max-height: 300px; overflow-y: auto; text-align: left; }
+#cmdList li { padding: 12px 15px; cursor: pointer; }
+#cmdList li.selected { background: #007bff; color: white; }
