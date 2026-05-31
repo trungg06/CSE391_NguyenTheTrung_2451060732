@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Cascade Puzzle</title>
+    <style>
+        /* Setup base để dễ nhìn trên trình duyệt */
+        body { font-family: sans-serif; padding: 20px; }
+        .card { border: 1px solid #ccc; padding: 10px; margin-bottom: 10px; }
+
+        /* Code CSS gốc từ đề bài */
+        body { font-size: 16px; color: #333; }
+        .container { font-size: 14px; }
+        .card { color: blue; }
+        .card .title { font-size: 20px; }
+        .card p { color: inherit; }
+        #featured .title { color: red; }
+        .highlight { color: green !important; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="card" id="featured">
+            <h2 class="title highlight">Sản phẩm A</h2>
+            <p>Mô tả sản phẩm</p>
+        </div>
+        <div class="card">
+            <h2 class="title">Sản phẩm B</h2>
+            <p class="highlight">Mô tả sản phẩm B</p>
+        </div>
+    </div>
+</body>
+</html>

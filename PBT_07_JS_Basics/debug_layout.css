@@ -1,0 +1,42 @@
+.container {
+  width: 960px;
+  margin: 0 auto;
+  background-color: #f9f9f9;
+  overflow: hidden; /* Clear float */
+}
+
+/* --- CÁCH 1: Dùng border-box --- */
+/* .sidebar {
+  box-sizing: border-box;
+  width: 300px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  float: left;
+  background-color: #ffebee;
+}
+.content {
+  box-sizing: border-box;
+  width: 660px;
+  padding: 30px;
+  border: 1px solid #ccc;
+  float: left;
+  background-color: #e8f5e9;
+} */
+
+/* --- CÁCH 2: Tính tay --- */
+
+.sidebar {
+    width: 258px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    float: left;
+    background-color: #ffebee;
+}
+.content {
+    width: 598px;
+    padding: 30px;
+    border: 1px solid #ccc;
+    float: left;
+    background-color: #e8f5e9;
+}
+
